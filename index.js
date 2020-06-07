@@ -111,6 +111,16 @@ function randomRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function Witcher(){
+    var randomNumber = Math.round(Math.random()*3); // 0, 1 or 2
+    switch(randomNumber){
+        case 0: return 'a lannister always pay his debts / ehh salah :kissing_closed_eyes:  ';
+        case 1: return 'Meaw miyaw miyau oiii >> btw logo guguk :kissing_closed_eyes:  ';
+        case 2: return 'Miaaaaaww aye aye :point_left: :point_up: :point_left: :point_up: ';
+        case 3: return ':kissing_cat: MIAAW MIAAW NYAA :kissing_cat:  ';
+    }
+}
+
 function Hina(){
     var randomNumber = Math.round(Math.random()*3);
     switch(randomNumber){
@@ -192,6 +202,9 @@ __**Commands List**__
 > \`-pettaming\` - list pet
 > \`-petfusion\` - list fusion pet
 > \`-cardcraft\` - Biaya crafting kartu king poring
+> \`-wocguide\` - menampilkan strategi WOC Guild
+> \`-woeguide-attack\` - menampilkan strategi attack WOE Guild
+> \`-woeguide-defense\` - menampilkan strategi defense WOE Guild
 `)
             .setFooter("Bot from lyon to WITCHER")
             .setTimestamp()
@@ -394,6 +407,193 @@ __**Commands List**__
                       });  
   
 
+}          if(command === "wocguide") {
+                   msg.channel.send("@everyone Guide to War of Crystals HERE!!");
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/UyBhsRH.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+  
+}          if(command === "wocguide") {
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/QIh3ETm.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+  
+}          if(command === "wocguide") {
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/EdEi0n6.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+  
+}          if(command === "wocguide") {
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/0M8Ef6T.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+  
+}          if(command === "wocguide") {
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/xajQPz7.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+  
+}          if(command === "wocguide") {
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/yo3Az3c.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+  
+}          if(command === "wocguide") {
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/bjlJYfu.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+  
+}          if(command === "wocguide") {
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/lsRbEWV.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+  
+}          if(command === "wocguide") {
+                    const woc = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/OwZi2hd.jpg`)
+                    msg.channel.send(woc)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-attack") {
+                    msg.channel.send("@everyone Guide to Attack on War Of Emperium HERE!!");
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/5noYs2M.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-attack") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/p6nQctH.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-attack") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/OJ0iQoP.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-attack") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/nF54CCN.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-attack") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/4bL4Uzn.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-attack") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/ofSqp8R.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-attack") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/OHqirGR.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-defense") {
+                    msg.channel.send("@everyone Guide to Defense on War Of Emperium HERE!!");
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/RIuPPDq.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-defense") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/Kwonnji.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-defense") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/uj7ffAR.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-defense") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/vhoO0uG.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-defense") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/8tWIACy.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-defense") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/xwEkWKp.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
+}          if(command === "woeguide-defense") {
+                    const woe = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/GHIANgv.jpg`)
+                    msg.channel.send(woe)
+                      .then(msg => {
+                        msg.delete(86400000)
+                      });
+    
 }          if(command === "space") {
                    const m = await msg.channel.send("=======================");
 
