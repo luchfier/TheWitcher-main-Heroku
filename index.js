@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const { Client, Util } = require("discord.js");
-const TOKEN = process.env.BOT_TOKEN;
 const PREFIX = process.env.PREFIX;
 require("./server.js")
 const bot = new Client({ disableEveryone: true });
@@ -18,27 +17,27 @@ bot.on('ready', () => {
 });
 
 bot.on('guildMemberAdd', member => {
-    member.addRole(member.guild.roles.find(role => role.name === "APAM"));
+    member.addRole(member.guild.roles.find(role => role.name === "Masyarakat"));
     var ran = randomRange(0,5);
     var greeting;
     switch (ran) {
         case 0:
-            greeting = `:tada: Hi <@${member.user.id}> Selamat datang di **WITCHER GUILD** <a:awh:718810189322518528><a:awal:718798277365203024><a:akhir:718798277931302952><a:awh:718810189322518528>`;
+            greeting = `:tada: Hi <@${member.user.id}> Selamat datang di **WITCHER GUILD** <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612>`;
             break;
         case 1:
-            greeting = `<a:awh:718810189322518528> Selamat datang di **WITCHER GUILD** <@${member.user.id}>Semoga Betah <a:awal:718798277365203024><a:akhir:718798277931302952>`;
+            greeting = `<a:crew:719138492830973977> Selamat Datang di **WITCHER GUILD** <@${member.user.id}>Semoga Betah ya <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612>`;
             break;
         case 2:
-            greeting = `Halo:wave: <@${member.user.id}> <a:awal:718798277365203024><a:akhir:718798277931302952> Aku belum kenal kamu, semoga kita semakin akrab ya <:shinobu:718847490304245771>`;
+            greeting = `Halo :wave: <@${member.user.id}> <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612> Aku belum kenal kamu, semoga kita semakin akrab ya <:shinobu:704044182909485058>`;
             break;
        case 3:
-            greeting = `<a:awal:718798277365203024><a:akhir:718798277931302952> Selamat datang <@${member.user.id}> Di <a:awh:718810189322518528> **WITCHER GUILD**<a:awh:718810189322518528>`;
+            greeting = `<a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612> Selamat datang <@${member.user.id}> Di <a:kilap:719138495074926612>**WITCHER GUILD**<a:kilap:719138495074926612>`;
             break;
         case 4:
-            greeting = `Guys <@${member.user.id}> Baru join, kasih dia teh anget <:wait:718848882934677577>`;
+            greeting = `Guys <@${member.user.id}> <:shinobu:704044182909485058>  Baru join, kasih dia teh anget <a:apih:701397086662557717>`;
             break;
         case 5:
-            greeting = `Dua tiga kucing berlari, selamat datang di **WITCHER GUILD** <@${member.user.id}> <a:awh:718810189322518528><a:awal:718798277365203024><a:akhir:718798277931302952><a:awh:718810189322518528>`;
+            greeting = `Dua tiga kucing berlari <a:ngocok:704041702670860299> Selamat datang di **WITCHER GUILD** <@${member.user.id}> <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612>`;
             break;
     }
     member.guild.channels.get('716173885078372402').send(greeting);
@@ -50,21 +49,20 @@ bot.on('guildMemberRemove', member => {
     var bye;
     switch (ran) {
         case 0:
-            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:rip:718859922703646730> Telah berpulang kerumah emak nya,Sampai jumpa lagi di WITCHER :wave:';
+            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:nisan1:719144460583436358> Telah berpulang kerumah emak nya,Sampai jumpa lagi di WITCHER <a:peti:718780864082870332>';
             break;
         case 1:
-            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:rip2:718859923206963250> TELAH MATI!! eh out!!!';
+            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:nisan2:719144460285509702> TELAH MATI!! eh OUT!!!';
             break;
         case 2:
-            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:rip3:718859923970195577> Telah Meninggalkan kita gess <a:coffin:718780814409596999>';
+            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:nisan3:719144455747403798> Telah Meninggalkan kita gess <a:peti:718780864082870332>';
             break;
         case 4:
-            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:rip4:718859922594463846> Dia telah Pergi jauh sekali :leaves:';
+            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:nisan3:719144455747403798> Dia telah Pergi jauh sekali :leaves:';
             break;
         case 5:
-            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <:rip6:718859922703646730> Pamit Dulu gess <a:coffin:718780814409596999>';
+            bye ='**' + member.user.username + '#' + member.user.discriminator +'** <a:peti:718780864082870332> Pamit Dulu gess <a:ngocok:704041702670860299><a:ngocok:704041702670860299>';
             break;
-  
     }
     member.guild.channels.get('716173898554540052').send(bye);
 });
@@ -459,4 +457,4 @@ __**Commands List**__
     return undefined;
 });
 
-bot.login(TOKEN);
+bot.login(process.env.BOT_TOKEN);
