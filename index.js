@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { Client, Util } = require("discord.js");
 const PREFIX = process.env.PREFIX;
 require("./server.js")
-const bot = new Client({ disableEveryone: true });
+const bot = new Client({ disableEveryone: false });
 const queue = new Map();
 const {MessageEmbed} = require('discord.js');
 const moment = require('moment');
@@ -408,7 +408,7 @@ __**Commands List**__
   
 
 }          if(command === "wocguide") {
-                   msg.channel.send("@everyone Guide to War of Crystals HERE!!");
+                   msg.channel.send("@everyone <a:apih:701397086662557717> Guide to War of Crystals HERE!! <a:apih:701397086662557717>");
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/UyBhsRH.jpg`)
                     msg.channel.send(woc)
@@ -481,7 +481,7 @@ __**Commands List**__
                       });
     
 }          if(command === "woeguide-attack") {
-                    msg.channel.send("@everyone Guide to Attack on War Of Emperium HERE!!");
+                    msg.channel.send("@everyone <a:apih:701397086662557717> Guide to Attack on War Of Emperium HERE!! <a:apih:701397086662557717>");
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/5noYs2M.jpg`)
                     msg.channel.send(woe)
