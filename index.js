@@ -40,7 +40,7 @@ bot.on('guildMemberAdd', member => {
             greeting = `Dua tiga kucing berlari <a:ngocok:704041702670860299> Selamat datang di **WITCHER GUILD** <@${member.user.id}> <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612>`;
             break;
     }
-    member.guild.channels.get('716173885078372402').send(greeting);
+    member.guild.channels.get('701530747013562448').send(greeting);
 });
 
 
@@ -64,7 +64,7 @@ bot.on('guildMemberRemove', member => {
             bye ='**' + member.user.username + '#' + member.user.discriminator +'** <a:peti:718780864082870332> Pamit Dulu gess <a:ngocok:704041702670860299><a:ngocok:704041702670860299>';
             break;
     }
-    member.guild.channels.get('716173898554540052').send(bye);
+    member.guild.channels.get('701530872427315381').send(bye);
 });
 
 
