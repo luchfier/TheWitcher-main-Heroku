@@ -538,7 +538,7 @@ __**Commands List**__
                       });
     
 }          if(command === "woeguide-defense") {
-                    msg.channel.send("@everyone Guide to Defense on War Of Emperium HERE!!");
+                    msg.channel.send("@everyone <a:apih:701397086662557717> Guide to Defense on War Of Emperium HERE!! <a:apih:701397086662557717>");
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/RIuPPDq.jpg`)
                     msg.channel.send(woe)
