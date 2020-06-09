@@ -25,7 +25,7 @@ bot.on('guildMemberAdd', member => {
             greeting = `:tada: Hi <@${member.user.id}> Selamat datang di **WITCHER GUILD** <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612>`;
             break;
         case 1:
-            greeting = `<a:crew:719138492830973977> Selamat Datang di **WITCHER GUILD** <@${member.user.id}>Semoga Betah ya <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612>`;
+            greeting = `<a:crew:719138492830973977> Selamat Datang di **WITCHER GUILD** <@${member.user.id}> Semoga Betah ya <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612>`;
             break;
         case 2:
             greeting = `Halo :wave: <@${member.user.id}> <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612> Aku belum kenal kamu, semoga kita semakin akrab ya <:shinobu:704044182909485058>`;
@@ -34,7 +34,7 @@ bot.on('guildMemberAdd', member => {
             greeting = `<a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612> Selamat datang <@${member.user.id}> Di <a:kilap:719138495074926612>**WITCHER GUILD**<a:kilap:719138495074926612>`;
             break;
         case 4:
-            greeting = `Guys <@${member.user.id}> <:shinobu:704044182909485058>  Baru join, kasih dia teh anget <a:apih:701397086662557717>`;
+            greeting = `Guys <@${member.user.id}> <:shinobu:704044182909485058> Baru join, kasih dia teh anget <a:apih:701397086662557717>`;
             break;
         case 5:
             greeting = `Dua tiga kucing berlari <a:ngocok:704041702670860299> Selamat datang di **WITCHER GUILD** <@${member.user.id}> <a:kilap:719138495074926612><a:wel:701399909072502854><a:com:701399909017976863><a:kilap:719138495074926612>`;
