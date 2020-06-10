@@ -413,7 +413,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/UyBhsRH.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
   
 }          if(command === "wocguide") {
@@ -421,7 +421,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/QIh3ETm.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
   
 }          if(command === "wocguide") {
@@ -429,7 +429,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/EdEi0n6.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
   
 }          if(command === "wocguide") {
@@ -437,7 +437,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/0M8Ef6T.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
   
 }          if(command === "wocguide") {
@@ -445,7 +445,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/xajQPz7.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
   
 }          if(command === "wocguide") {
@@ -453,7 +453,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/yo3Az3c.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
   
 }          if(command === "wocguide") {
@@ -461,7 +461,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/bjlJYfu.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
   
 }          if(command === "wocguide") {
@@ -469,7 +469,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/lsRbEWV.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
   
 }          if(command === "wocguide") {
@@ -477,7 +477,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/OwZi2hd.jpg`)
                     msg.channel.send(woc)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-attack") {
@@ -486,7 +486,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/5noYs2M.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-attack") {
@@ -494,7 +494,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/p6nQctH.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-attack") {
@@ -502,7 +502,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/OJ0iQoP.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-attack") {
@@ -510,7 +510,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/nF54CCN.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-attack") {
@@ -518,7 +518,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/4bL4Uzn.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-attack") {
@@ -526,7 +526,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/ofSqp8R.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-attack") {
@@ -534,7 +534,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/OHqirGR.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-defense") {
@@ -543,7 +543,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/RIuPPDq.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-defense") {
@@ -551,7 +551,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/Kwonnji.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-defense") {
@@ -559,7 +559,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/uj7ffAR.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-defense") {
@@ -567,7 +567,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/vhoO0uG.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-defense") {
@@ -575,7 +575,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/8tWIACy.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-defense") {
@@ -583,7 +583,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/xwEkWKp.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "woeguide-defense") {
@@ -591,7 +591,7 @@ __**Commands List**__
                      .setImage(`https://i.imgur.com/GHIANgv.jpg`)
                     msg.channel.send(woe)
                       .then(msg => {
-                        msg.delete(86400000)
+                        msg.delete(26400000)
                       });
     
 }          if(command === "space") {
