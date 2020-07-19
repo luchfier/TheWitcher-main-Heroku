@@ -644,7 +644,19 @@ __**Commands List**__
 }          if(command === "hi") {
                   const m = msg.reply(Hi());
 
-}          if(command === "clear") {
+}
+
+          if (command == 'role') {
+                let role = msg.guild.roles.find(r => r.name === "CORE");
+                let member = msg.mentions.members.first();
+
+                member.addRole(role).catch(console.error);
+                return msg.channel.send(`
+                Done :white_check_mark:
+                <@${member.user.id}> silahkan ke <#733579122739118140> untuk pick job masing - masing`);
+
+             
+}           if(command === "clear") {
                    if(!msg.member.roles.some(r=>["ADMIN"].includes(r.name)) )
                   if(!msg.member.roles.some(r=>["Server helper"].includes(r.name)) )
                   return msg.reply("Sori bro/sist lo ga punya akses :poop: !"); {
