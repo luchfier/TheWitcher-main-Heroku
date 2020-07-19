@@ -649,16 +649,18 @@ __**Commands List**__
           if (command == 'role') {
                 if(!msg.member.roles.some(r=>["ADMIN"].includes(r.name)) )
                 if(!msg.member.roles.some(r=>["Server helper"].includes(r.name)) )
-                    return msg.reply("Sori  lo bukan ADMIN :poop: !");
+                return msg.reply("Sori  lo bukan ADMIN :poop: !");
                     
-                let role = msg.guild.roles.find(r => r.name === "CORE");
+                let role   = msg.guild.roles.find(r => r.name === "CORE");
+                let remove = msg.guild.roles.find(r => r.name === "Masyarakat");
                 let member = msg.mentions.members.first();
 
                 member.addRole(role).catch(console.error);
+                member.removeRole(remove);
                 return msg.channel.send(`
 Done :white_check_mark:
-<@${member.user.id}> silahkan ke <#733579122739118140> untuk pick job`);
-
+<@${member.user.id}> silahkan ke <#733579122739118140> untuk memilih job kamu.`);
+                    
              
 }           if(command === "clear") {
                    if(!msg.member.roles.some(r=>["ADMIN"].includes(r.name)) )
