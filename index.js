@@ -16,6 +16,41 @@ bot.on('ready', () => {
     });
 });
 
+bot.on("messageDelete", async msg => {
+  let logs = await msg.guild.fetchAuditLogs({type: 72});
+  let entry = logs.entries.first();
+    var ran = randomRange(0,3);
+    var icon;
+    switch (ran) {
+        case 0:
+            icon = "https://i.imgur.com/AGwRNrT.png";
+            break;
+         case 1:
+            icon = "https://i.imgur.com/TUH0Oph.png";
+            break;
+         case 2:
+            icon = "https://i.imgur.com/tAzanU9.png";
+            break;
+         case 3:
+            icon = "https://i.imgur.com/syloCD9.jpg";
+            break;
+    }
+
+  let embed = new Discord.RichEmbed()
+    .setAuthor("The Witcher™","https://i.imgur.com/A2vPdXq.jpg")
+    .setThumbnail(icon)
+    .setTitle("**DELETED MESSAGE**")
+    .setColor("#636363")
+    .addField("Author", msg.author.tag, true)
+    .addField("Channel", msg.channel, true)
+    .addField("Konten", msg.content)
+    .addField("Pelaku", entry.executor)
+    .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
+
+  let channel = msg.guild.channels.find(x => x.name === 'etc');
+  channel.send({embed});
+});
+
 bot.on('guildMemberAdd', member => {
     member.addRole(member.guild.roles.find(role => role.name === "Masyarakat"));
     var ran = randomRange(0,5);
