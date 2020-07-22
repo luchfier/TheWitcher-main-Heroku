@@ -181,7 +181,7 @@ bot.on("error", console.error);
 bot.on('ready', () => {
   console.log(`${bot.user.tag} has been successfully turned on!`)
   try {
-    const channel = bot.channels.find('name', 'etc')
+    const channel = bot.channels.find('name', '🔍⏐etc')
     const up = new Discord.RichEmbed()
     .setColor("#00ff73")
     .setAuthor("BOT STATUS")
@@ -199,15 +199,15 @@ bot.on('ready', () => {
 
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
 bot.on("reconnecting", () => {
-  console.log(`${bot.user.tag} has been successfully turned on!`)
+  console.log(`${bot.user.tag} reconnecting...`)
   try {
-    const channel = bot.channels.find('name', 'etc')
+    const channel = bot.channels.find('name', '🔍⏐etc')
     const restart = new Discord.RichEmbed()
     .setColor("#00ff73")
     .setAuthor("BOT STATUS")
     .setThumbnail("https://i.imgur.com/A2vPdXq.jpg")
     .setDescription('```Client Restart```')
-    .addField('Status','Online :white_check_mark:')
+    .addField('Status','reconnecting :arrows_counterclockwise:')
     .setTimestamp()
 	  .setFooter('Waktu');
        channel.send(restart);
