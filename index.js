@@ -40,7 +40,7 @@ bot.on("messageDelete", async msg => {
     .setAuthor("The Witcher™","https://i.imgur.com/A2vPdXq.jpg")
     .setThumbnail(icon)
     .setTitle("**DELETED MESSAGE**")
-    .setColor("#636363")
+    .setColor("#000000")
     .addField("Author", msg.author.tag, true)
     .addField("Channel", msg.channel, true)
     .addField("Konten", msg.content)
