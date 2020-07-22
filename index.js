@@ -198,25 +198,7 @@ bot.on('ready', () => {
 });
 
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
-bot.on("reconnecting", () => {
-  console.log(`${bot.user.tag} reconnecting...`)
-  try {
-    const channel = bot.channels.find('name', '🔍⏐etc')
-    const restart = new Discord.RichEmbed()
-    .setColor("#00ff73")
-    .setAuthor("BOT STATUS")
-    .setThumbnail("https://i.imgur.com/A2vPdXq.jpg")
-    .setDescription('```Client Restart```')
-    .addField('Status','reconnecting :arrows_counterclockwise:')
-    .setTimestamp()
-	  .setFooter('Waktu');
-       channel.send(restart);
-
-  } catch (e) {
-    console.log('[ERROR:]',e);
-  }
-});
-
+bot.on("reconnecting", () => console.log("I am reconnecting now..."));
 bot.on("message", async msg => { 
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(PREFIX)) return undefined;
