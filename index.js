@@ -196,7 +196,6 @@ bot.on('ready', () => {
     console.log('[ERROR:]',e);
   }
 });
-
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
 bot.on("reconnecting", () => console.log("I am reconnecting now..."));
 bot.on("message", async msg => { 
