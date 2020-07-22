@@ -47,7 +47,7 @@ bot.on("messageDelete", async msg => {
     .addField("Pelaku", entry.executor)
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 
-  let channel = msg.guild.channels.find(x => x.name === 'etc');
+  let channel = msg.guild.channels.find(x => x.name === '🔍⏐etc');
   channel.send({embed});
 });
 
