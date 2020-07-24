@@ -716,7 +716,7 @@ Done :white_check_mark:
              
 }           if(command === "clear") {
                    if(!msg.member.roles.some(r=>["ADMIN"].includes(r.name)) )
-                  if(!msg.member.roles.some(r=>["Server helper"].includes(r.name)) )
+                  if(!msg.member.roles.some(r=>["Server Helper"].includes(r.name)) )
                   return msg.reply("Sori bro/sist lo ga punya akses :poop: !"); {
                         msg.channel.fetchMessages()
                            .then(function(list){
