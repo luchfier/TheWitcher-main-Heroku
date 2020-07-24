@@ -714,15 +714,19 @@ Done :white_check_mark:
 <@${member.user.id}> silahkan ke <#733579122739118140> untuk memilih job kamu.`);
                     
              
-}           if(command === "clear") {
-                   if(!msg.member.roles.some(r=>["ADMIN"].includes(r.name)) )
-                  if(!msg.member.roles.some(r=>["Server Helper"].includes(r.name)) )
-                  return msg.reply("Sori bro/sist lo ga punya akses :poop: !"); {
-                        msg.channel.fetchMessages()
-                           .then(function(list){
-                        msg.channel.bulkDelete(list);
-                  }, function(err){msg.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
-            };
+}          if(command === "clear") {
+                  if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
+                  if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
+                  return msg.reply("Sori bro/sist lo ga punya akses :poop: !");
+                  msg.channel.fetchMessages().then(messages => {
+                  msg.channel.bulkDelete(messages);
+                  const messagesDeleted = messages.array().length; 
+                  msg.channel.send("Telah Menghapus `" + messagesDeleted + "` Message")
+                    .then(msg => {
+                        msg.delete(1500)
+                      });
+                  })
+  
 } 
     return undefined;
 });
