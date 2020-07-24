@@ -699,8 +699,8 @@ __**Commands List**__
 }
 
           if (command == 'role') {
-                if(!msg.member.roles.some(r=>["ADMIN"].includes(r.name)) )
-                if(!msg.member.roles.some(r=>["Server helper"].includes(r.name)) )
+                if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
+                if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
                 return msg.reply("Sori  lo bukan ADMIN :poop: !");
                     
                 let role   = msg.guild.roles.find(r => r.name === "CORE");
