@@ -44,7 +44,6 @@ bot.on("messageDelete", async msg => {
     .addField("Author", msg.author.tag, true)
     .addField("Channel", msg.channel, true)
     .addField("Konten", msg.content)
-    .addField("Pelaku", entry.executor)
     .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`);
 
   let channel = msg.guild.channels.find(x => x.name === '🔍⏐etc');
