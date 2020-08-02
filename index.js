@@ -15,6 +15,7 @@ bot.on('ready', () => {
         }
     });
 });
+
 bot.on('guildMemberAdd', member => {
     member.addRole(member.guild.roles.find(role => role.name === "Masyarakat"));
     var ran = randomRange(0,5);
@@ -65,7 +66,6 @@ bot.on('guildMemberRemove', member => {
     }
     member.guild.channels.get('701530872427315381').send(bye);
 });
-
 
 function formatTime(date, full) {
     let time = '';
