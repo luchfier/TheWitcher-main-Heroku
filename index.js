@@ -168,6 +168,7 @@ __**Commands List**__
 > \`-ban ["@user"]\` - ban member dari server 
 > \`-clear\` - membersihkan pesan dari channel tertentu
 > \`-Reboot!\` - Restart Bot
+> \`-role\` - memberikan role core
 ==============================
 > >> \`**Music Commad**\`
 > \`-play/P\` - command play music ketik -p "judul lagu" 
@@ -204,6 +205,7 @@ __**Commands List**__
 > \`-wocguide\` - menampilkan strategi WOC Guild
 > \`-woeguide-attack\` - menampilkan strategi attack WOE Guild
 > \`-woeguide-defense\` - menampilkan strategi defense WOE Guild
+> \`-Roll/rng\` - Nomor acak
 `)
             .setFooter("Bot from lyon to WITCHER")
             .setTimestamp()
@@ -642,10 +644,42 @@ __**Commands List**__
              
 }          if(command === "hi") {
                   const m = msg.reply(Hi());
+    
+}          if(command === "roll"|| command === "rng") {
+                  
+              let comma_index = msg.content.indexOf('-');
+              let num1 = msg.content.substring((PREFIX + 'rng ').length, comma_index);
+              num1 = parseInt(num1);
+              let num2 = msg.content.substring(comma_index + 1);
+              num2 = parseInt(num2);
+              if (comma_index == -1 || isNaN(num1) || isNaN(num2)) {
+                let log = `Successful error reply to ${msg.content}`;
+                msg.reply(`mohon masukan angka yang valid \`(Contoh: ${PREFIX}roll 1-999)\``)
+                .then(console.log(log))
+                .catch(console.error);
+                return log;
+              }
 
-}
+              let min = Math.min(num1, num2);
+              let max = Math.max(num1, num2);
+              let random = Math.floor(Math.random() * (max - min + 1)) + min;
 
-          if (command == 'role') {
+              const rich_embed = new Discord.RichEmbed()
+              .setColor('DARK_GOLD')
+              .setThumbnail('https://i.imgur.com/YHGYYg1.png')
+              .setAuthor('Random Number Generator')
+              .addField('Dari', min, true)
+              .addField('Ke', max, true)
+              .addField('Hasil', `\`${random}\``, false)
+              .setFooter("The Witcher™")
+              .setTimestamp();
+
+              msg.channel.send(rich_embed)
+              .then(console.log(`Successful command reply to ${msg.content}`))
+              .catch(console.error);
+              return rich_embed;
+    
+}           if (command == 'role') {
                 if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
                 if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
                 return msg.reply("Sori  lo bukan ADMIN :poop: !");
