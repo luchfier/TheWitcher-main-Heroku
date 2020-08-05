@@ -142,7 +142,24 @@ function Hi(){
 
 bot.on("warn", console.warn);
 bot.on("error", console.error);
-bot.on('ready', () => console.log(`${bot.user.tag} has been successfully turned on!`));
+bot.on('ready', () => {
+  console.log(`${bot.user.tag} has been successfully turned on!`)
+  try {
+    const channel = bot.channels.find('name', '🔍⏐etc')
+    const up = new Discord.RichEmbed()
+    .setColor("#00ff73")
+    .setAuthor("BOT STATUS")
+    .setThumbnail("https://i.imgur.com/A2vPdXq.jpg")
+    .setDescription('```Client Update```')
+    .addField('Status','Online :white_check_mark:')
+    .setTimestamp()
+	  .setFooter('Waktu');
+       channel.send(up);
+
+  } catch (e) {
+    console.log('[ERROR:]',e);
+  }
+});
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
 bot.on("reconnecting", () => console.log("I am reconnecting now..."));
 bot.on("message", async msg => { 
