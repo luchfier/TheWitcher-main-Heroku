@@ -664,7 +664,7 @@ __**Commands List**__
     
 }          if(command === "roll"|| command === "rng") {
                   
-              let comma_index = msg.content.indexOf('-');
+             let comma_index = msg.content.indexOf('-');
               let num1 = msg.content.substring((PREFIX + 'rng ').length, comma_index);
               num1 = parseInt(num1);
               let num2 = msg.content.substring(comma_index + 1);
