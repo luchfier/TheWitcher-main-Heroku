@@ -664,14 +664,14 @@ __**Commands List**__
     
 }          if(command === "roll"|| command === "rng") {
                   
-             let comma_index = msg.content.indexOf('-');
+             let comma_index = msg.content.indexOf(',');
               let num1 = msg.content.substring((PREFIX + 'rng ').length, comma_index);
               num1 = parseInt(num1);
               let num2 = msg.content.substring(comma_index + 1);
               num2 = parseInt(num2);
               if (comma_index == -1 || isNaN(num1) || isNaN(num2)) {
                 let log = `Successful error reply to ${msg.content}`;
-                msg.reply(`mohon masukan angka yang valid \`(Contoh: ${PREFIX}roll 1-999)\``)
+                msg.reply(`mohon masukan angka yang valid \`(Contoh: ${PREFIX}roll 1,999)\``)
                 .then(console.log(log))
                 .catch(console.error);
                 return log;
