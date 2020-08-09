@@ -699,9 +699,7 @@ __**Commands List**__
 }           if (command == 'role') {
                 if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
                 if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
-                return msg.reply(`maaf, command ini hanya bisa di gunakan oleh admin,
-cukup tulis nama kamu dan nick char dan mention/tag ADMIN untuk up role kamu
-__Terimakasih__`);
+                return msg.reply("maaf, command ini hanya bisa di gunakan oleh admin,\ncukup tulis nama kamu dan nick char lalu mention/tag ADMIN untuk up role kamu \ncontoh", {files: ["https://i.imgur.com/GUUpvTB.png"]});
                     
                 let role   = msg.guild.roles.find(r => r.name === "CORE");
                 let remove = msg.guild.roles.find(r => r.name === "Masyarakat");
