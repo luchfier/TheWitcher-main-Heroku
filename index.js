@@ -6,6 +6,13 @@ const bot = new Client({ disableEveryone: false });
 const queue = new Map();
 const {MessageEmbed} = require('discord.js');
 const moment = require('moment');
+const YouTube = require("simple-youtube-api");
+const ytdl = require("ytdl-core");
+const GOOGLE_API_KEY = process.env.YTAPI_KEY;
+const youtube = new YouTube(GOOGLE_API_KEY);
+const momentDurationFormatSetup = require("moment-duration-format");
+
+
 
 bot.on('ready', () => {
     bot.user.setStatus('available')
@@ -66,6 +73,78 @@ bot.on('guildMemberRemove', member => {
     }
     member.guild.channels.get('701530872427315381').send(bye);
 });
+
+
+//music component ==============================================
+
+async function handleVideo(video, msg, voiceChannel, playlist = false) {
+    const serverQueue = queue.get(msg.guild.id);
+    const song = {
+        id: video.id,
+        l1: moment.duration(video.duration).format('hh:mm:ss'),
+        title: Util.escapeMarkdown(video.title),
+        url: `https://www.youtube.com/watch?v=${video.id}`
+    };
+    if (!serverQueue) {
+        const queueConstruct = {
+            textChannel: msg.channel,
+            voiceChannel: voiceChannel,
+            connection: null,
+            songs: [],
+            volume: 100,
+            playing: true,
+            loop: false
+        };
+        queue.set(msg.guild.id, queueConstruct);
+
+        queueConstruct.songs.push(song);
+        try {
+            var connection = await voiceChannel.join();
+            queueConstruct.connection = connection;
+            play(msg.guild, queueConstruct.songs[0]);
+        } catch (error) {
+            console.error(`Tidak bisa Terhubung ke Voice Channel: ${error}`);
+            queue.delete(msg.guild.id);
+            return msg.channel.send(`Tidak bisa Terhubung ke Voice Channel: **\`${error}\`**`);
+        }
+    } else {
+     const queue = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setDescription(`\n**\`${song.title}\`** | \`${song.l1}\` \n__**Di Tambahkan ke Antrian**__ :thumbsup: `)
+        serverQueue.songs.push(song);
+        console.log(serverQueue.songs);
+        if (playlist) return undefined;
+      
+        else return msg.channel.send(queue);
+    }
+    return undefined;
+}
+function play(guild, song) {
+    const serverQueue = queue.get(guild.id);
+    if (!song) {
+        serverQueue.voiceChannel.leave();
+        queue.delete(guild.id);
+        return;
+    }
+    const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
+        .on("end", reason => {
+            if (reason === "`\Server ERROR\`") console.log("Song ended");
+            else console.log(reason);
+            const shiffed = serverQueue.songs.shift();
+            if (serverQueue.loop === true) {
+	   	serverQueue.songs.push(shiffed); 
+	    };
+            play(guild, serverQueue.songs[0]);
+        })
+        .on("error", error => console.error(error));
+    dispatcher.setVolumeLogarithmic(serverQueue.volume / 100);
+     const lagu = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setDescription(`🎶  **|**  Start Playing <a:dance:743435170392047698> <a:apih:701397086662557717> \n**\`${song.title}\`** | \`${song.l1}\``)
+    serverQueue.textChannel.send(lagu);
+}
+
+//end music component ==============================================
 
 function formatTime(date, full) {
     let time = '';
@@ -726,6 +805,183 @@ Done :white_check_mark:
                   })
   
 } 
+
+  //music command=============
+
+    if (command === "play" || command === "p") {
+        const voiceChannel = msg.member.voiceChannel;
+        if (!voiceChannel) return msg.reply("**\`Silahkan Masuk ke Voice Channel untuk Play Music\`** :boar:");
+        const permissions = voiceChannel.permissionsFor(msg.client.user);
+        if (!permissions.has("CONNECT")) {
+            return msg.channel.send("Maaf aktifkan izin **`CONNECT`** Untuk melanjutkan");
+        }
+        if (!permissions.has("SPEAK")) {
+            return msg.channel.send("Maaf aktifkan izin **`SPEAK`** Untuk melanjutkan");
+        }
+        if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
+            const playlist = await youtube.getPlaylist(url);
+            const videos = await playlist.getVideos();
+            for (const video of Object.values(videos)) {
+                const video2 = await youtube.getVideoByID(video.id);
+                await handleVideo(video2, msg, voiceChannel, true); 
+            }
+            
+        const song = {
+                      id: video.id,
+                      l1: moment.duration(video.duration).format('hh:mm:ss'),
+                      title: Util.escapeMarkdown(video.title),
+                      url: `https://www.youtube.com/watch?v=${video.id}`
+                  };
+             const Ye = new Discord.RichEmbed()
+                .setColor("RANDOM")
+                .setDescription(`\n**\`${song.title}\`** | \`${song.l1}\` \n__**Di Tambahkan ke Antrian**__ :thumbsup: `)
+                return msg.channel.send(Ye);
+
+        } else {
+            try {
+                var video = await youtube.getVideo(url);
+            } catch (error) {
+                try {
+                    var videos = await youtube.searchVideos(searchString, 10);
+                    var video = await youtube.getVideoByID(videos[0].id);
+                    if (!video) return msg.channel.send("🆘  **|**  Tidak ada hasil ditemukan.");
+                } catch (err) {
+                    console.error(err);
+                    return msg.channel.send("🆘  **|**  Tidak ada hasil ditemukan.");
+                }
+            }
+            return handleVideo(video, msg, voiceChannel);
+        }
+    }
+  
+    if (command === "search" || command === "sc") {
+        const voiceChannel = msg.member.voiceChannel;
+        if (!voiceChannel) return msg.reply("**\`Silahkan Masuk ke Voice Channel untuk Play Music\`** :boar:");
+        const permissions = voiceChannel.permissionsFor(msg.client.user);
+        if (!permissions.has("CONNECT")) {
+            return msg.channel.send("Maaf aktifkan izin **`CONNECT`** Untuk melanjutkan");
+        }
+        if (!permissions.has("SPEAK")) {
+            return msg.channel.send("Maaf aktifkan izin **`SPEAK`** Untuk melanjutkan");
+        }
+        if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
+            const playlist = await youtube.getPlaylist(url);
+            const videos = await playlist.getVideos();
+            for (const video of Object.values(videos)) {
+                const video2 = await youtube.getVideoByID(video.id); 
+                await handleVideo(video2, msg, voiceChannel, true); 
+            }
+                   const song = {
+                      id: video.id,
+                      l1: moment.duration(video.duration).format('hh:mm:ss'),
+                      title: Util.escapeMarkdown(video.title),
+                      url: `https://www.youtube.com/watch?v=${video.id}`
+                  };
+             const Ye2 = new Discord.RichEmbed()
+                .setColor("RANDOM")
+                .setDescription(`\n**\`${song.title}\`** | \`${song.l1}\` \n__**Di Tambahkan ke Antrian**__ :thumbsup: `)
+                return msg.channel.send(Ye2);
+        } else {
+            try {
+                var video = await youtube.getVideo(url);
+            } catch (error) {
+                try {
+                    var videos = await youtube.searchVideos(searchString, 10);
+                    let index = 0;
+                     const search= new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setDescription(`
+__**Pilih Lagu <a:dance:743435170392047698>**__
+${videos.map(video2 => `**\`${++index}\`.**  ${video2.title}`).join("\n")}
+Silahkan ketik 1-10.`)
+                    msg.channel.send(search);
+                    try {
+                        var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
+                            maxMatches: 1,
+                            time: 18000,
+                            errors: ["time"]
+                        });
+                    } catch (err) {
+                        console.error(err);
+                        return msg.channel.send("Tidak ada input,Cancel...");
+                    }
+                    const videoIndex = parseInt(response.first().content);
+                    var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
+                } catch (err) {
+                    console.error(err);
+                    return msg.channel.send("🆘  **|**  Tidak ada hasil ditemukan.");
+                }
+            }
+            return handleVideo(video, msg, voiceChannel);
+        }
+    } else if (command === "skip" || command == "s") {
+        if (!msg.member.voiceChannel) return msg.reply("**\`Silahkan Masuk ke Voice Channel untuk Play Music\`** :boar:");
+        if (!serverQueue) return msg.channel.send("Tidak ada yang bisa di **\`skip\`**");
+        serverQueue.connection.dispatcher.end("SOke");
+        msg.channel.send("⏭️  **|**  Skip");
+        return undefined;
+      
+    } else if (command === "stop" || command == "leave" ) {
+        if (!msg.member.voiceChannel) return msg.reply("**\`Silahkan Masuk ke Voice Channel untuk Play Music\`** :boar:");
+        if (!serverQueue) return msg.channel.send("Tidak ada yang bisa di **\`stop\`**");
+        serverQueue.songs = [];
+        serverQueue.connection.dispatcher.end("Oke");
+        msg.channel.send("⏹️  **|**  Bye");
+        return undefined;
+      
+    } else if (command === "volume" || command === "vol") {
+        if (!msg.member.voiceChannel) return msg.reply("**\`Silahkan Masuk ke Voice Channel untuk Play Music\`** :boar:");
+        if (!serverQueue) return msg.channel.send("Silahkan Mainkan lagu Untuk Mengunakan Command ini");
+        if (!args[1]) return msg.channel.send(`Volume Sekarang: **\`${serverQueue.volume}%\`**`);
+        if (isNaN(args[1]) || args[1] > 100) return msg.channel.send("Hanya Bisa Dalam **\`1\`** - **\`100\`**");
+
+        serverQueue.volume = args[1];
+        serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 100);
+        return msg.channel.send(`I set the volume to: **\`${args[1]}%\`**`);
+      
+    } else if (command === "nowplaying" || command === "np") {
+        if (!serverQueue) return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
+          const np = new Discord.RichEmbed()
+                      .setColor("RANDOM")
+                      .setDescription(`**Live NOW!! <a:apih:701397086662557717> : \`${serverQueue.songs[0].title}\` | \`${serverQueue.songs[0].l1}\`**
+                  `)      
+        return msg.channel.send(np);
+      
+    } else if (command === "queue" || command === "q") {
+        if (!serverQueue) return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
+        let index = 0;
+        const antri = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setDescription(`__**Daftar Antri**__
+${serverQueue.songs.map(song => `**\`${++index}\`  |** ${song.title} **|** ${song.l1}`).join("\n")}
+**Live NOW!! <a:apih:701397086662557717> : \`${serverQueue.songs[0].title}\` | \`${serverQueue.songs[0].l1}\`**
+        `)      
+        return msg.channel.send(antri);
+      
+    } else if (command === "pause") {
+        if (serverQueue && serverQueue.playing) {
+            serverQueue.playing = false;
+            serverQueue.connection.dispatcher.pause();
+            return msg.channel.send("⏸  **|**  Berhenti sekejap");
+        }
+        return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
+      
+    } else if (command === "resume") {
+        if (serverQueue && !serverQueue.playing) {
+            serverQueue.playing = true;
+            serverQueue.connection.dispatcher.resume();
+            return msg.channel.send("▶  **|**  Gass kak!!");
+        }
+        return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
+      
+    } else if (command === "loop" || command == "repeat") {
+    	if (serverQueue) {
+            serverQueue.loop = !serverQueue.loop;
+            return msg.channel.send(`:repeat: **|** repeat ${serverQueue.loop === true ? "on" : "off"}!`);
+	};
+	return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
+    }  
+  
     return undefined;
 });
 
