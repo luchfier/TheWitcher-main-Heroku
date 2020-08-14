@@ -743,7 +743,7 @@ __**Commands List**__
     
 }          if(command === "roll"|| command === "rng") {
                   
-             let comma_index = msg.content.indexOf(',');
+              let comma_index = msg.content.indexOf(',');
               let num1 = msg.content.substring((PREFIX + 'rng ').length, comma_index);
               num1 = parseInt(num1);
               let num2 = msg.content.substring(comma_index + 1);
@@ -764,17 +764,21 @@ __**Commands List**__
               .setColor('DARK_GOLD')
               .setThumbnail('https://i.imgur.com/YHGYYg1.png')
               .setAuthor('Random Number Generator')
-              .addField('Dari', min, true)
-              .addField('Ke', max, true)
-              .addField('Hasil', `\`${random}\``, false)
+              .addField('Dari', `__${min}__`, true)
+              .addField('Ke',`__${max}__`, true)
+              .addField('Hasil :confetti_ball:', `__\`${random}\`__`, false)
               .setFooter("The Witcher™")
               .setTimestamp();
-
-              msg.channel.send(rich_embed)
+            
+              msg.channel.send('Bentar Ya... <a:roll:743791502395965460>').then((msg)=> {
+                    setTimeout(function(){
+                      msg.edit(rich_embed);
+                    }, 3000)
+                  })
               .then(console.log(`Successful command reply to ${msg.content}`))
               .catch(console.error);
               return rich_embed;
-    
+	
 }           if (command == 'role') {
                 if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
                 if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
