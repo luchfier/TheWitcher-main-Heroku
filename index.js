@@ -713,7 +713,7 @@ __**Commands List**__
 
 }          if(command === "ping") {
                     const m = await msg.channel.send("Ping?");
-                    m.edit(`_PING!!_ Latency BOT **${m.createdTimestamp - msg.createdTimestamp}ms.** Latency Ente **${Math.round(bot.ping)}ms,**`) ;
+                    m.edit(`_PING!!_ Latency BOT **${m.createdTimestamp - msg.createdTimestamp}ms.** API **${Math.round(bot.ping)}ms,**`) ;
 
 }          if(command === "witcher!") {
                   const m = msg.reply(Witcher());
