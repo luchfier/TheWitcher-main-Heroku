@@ -221,24 +221,7 @@ function Hi(){
 
 bot.on("warn", console.warn);
 bot.on("error", console.error);
-bot.on('ready', () => {
-  console.log(`${bot.user.tag} has been successfully turned on!`)
-  try {
-    const channel = bot.channels.find('name', '🔍⏐etc')
-    const up = new Discord.RichEmbed()
-    .setColor("#00ff73")
-    .setAuthor("BOT STATUS")
-    .setThumbnail("https://i.imgur.com/A2vPdXq.jpg")
-    .setDescription('```Client Update```')
-    .addField('Status','Online :white_check_mark:')
-    .setTimestamp()
-	  .setFooter('Waktu');
-       channel.send(up);
-
-  } catch (e) {
-    console.log('[ERROR:]',e);
-  }
-});
+bot.on('ready', () => console.log(`${bot.user.tag} has been successfully turned on!`));
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
 bot.on("reconnecting", () => console.log("I am reconnecting now..."));
 bot.on("message", async msg => { 
@@ -289,6 +272,7 @@ __**Commands List**__
 > \`-hina\` - random message buat yg suka di maki - maki (tiati Baper)
 > \`-ping\`  - info latency 
 > \`-witcher!\` - RANDOM MESSAGE YEL YEL KALIAN!!
+> \`-Roll/rng\` - Nomor acak
 ==============================
 > >> \`**Guide Command**\`
 > \`-element\` - element converter table
@@ -301,7 +285,6 @@ __**Commands List**__
 > \`-wocguide\` - menampilkan strategi WOC Guild
 > \`-woeguide-attack\` - menampilkan strategi attack WOE Guild
 > \`-woeguide-defense\` - menampilkan strategi defense WOE Guild
-> \`-Roll/rng\` - Nomor acak
 `)
             .setFooter("Bot from lyon to WITCHER")
             .setTimestamp()
@@ -792,7 +775,7 @@ __**Commands List**__
                 member.removeRole(remove);
                 return msg.channel.send(`
 Done :white_check_mark:
-<@${member.user.id}> silahkan ke <#733579122739118140> untuk memilih job kamu.`);
+> Hi :wave: <@${member.user.id}> silahkan ke <#733579122739118140> untuk memilih job kamu.`);
                     
              
 }          if(command === "clear") {
