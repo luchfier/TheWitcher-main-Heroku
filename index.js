@@ -248,6 +248,7 @@ __**Commands List**__
 > \`-clear\` - membersihkan pesan dari channel tertentu
 > \`-Reboot!\` - Restart Bot
 > \`-role\` - memberikan role core
+> \`-Rename/nick\` - Ganti Nick Server Member
 ==============================
 > >> \`**Music Commad**\`
 > \`-play/P\` - command play music ketik -p "judul lagu" 
@@ -677,7 +678,7 @@ __**Commands List**__
 }          if(command === "space") {
                    const m = await msg.channel.send("=======================");
 
-}            if (command === "kick") {
+}          if (command === "kick") {
                    if(!msg.member.roles.some(r=>["ADMIN", "Moderator"].includes(r.name)) )
                    return msg.reply("sori bro/sis lo bukan admin! :yawning_face: ");
 
@@ -688,7 +689,7 @@ __**Commands List**__
                     return msg.reply("Gw ga bisa kick Dia! Kasta nya beda:warning: ");
 
                   let reason = args.slice(1).join(' ');
-                  if(!reason) reason = "Dia bau sapi";
+                  if(!reason) reason = "Silahkan masukan alasan";
 
                   await member.kick(reason)
                     .catch(error => msg.reply(`Maaf ${msg.author} Gw Gabisa kick dia : ${error}`));
@@ -705,7 +706,7 @@ __**Commands List**__
                     return msg.reply("Gw ga bisa kick Dia! Kasta nya beda:warning:");
 
                   let reason = args.slice(1).join(' ');
-                  if(!reason) reason = "Dia bau sapi";
+                  if(!reason) reason = "Silahkan masukan alasan";
 
                   await member.ban(reason)
                     .catch(error => msg.reply(`Maaf ${msg.author} Gw Gabisa kick dia : ${error}`));
@@ -713,7 +714,7 @@ __**Commands List**__
 
 }          if(command === "ping") {
                     const m = await msg.channel.send("Ping?");
-                    m.edit(`_PING!!_ Latency BOT **${m.createdTimestamp - msg.createdTimestamp}ms.** API **${Math.round(bot.ping)}ms,**`) ;
+                    m.edit(`_PING!!_ Latency BOT **${m.createdTimestamp - msg.createdTimestamp}ms.** Latency  **${Math.round(bot.ping)}ms,**`) ;
 
 }          if(command === "witcher!") {
                   const m = msg.reply(Witcher());
@@ -770,6 +771,9 @@ __**Commands List**__
                 let role   = msg.guild.roles.find(r => r.name === "CORE");
                 let remove = msg.guild.roles.find(r => r.name === "Masyarakat");
                 let member = msg.mentions.members.first();
+                if(!member)
+                    return msg.reply("Silahkan metion member yang valid di Server ini");
+                
 
                 member.addRole(role).catch(console.error);
                 member.removeRole(remove);
@@ -791,7 +795,25 @@ Done :white_check_mark:
                       });
                   })
   
-} 
+}          if(command === "rename" || command === "nick") {
+                if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
+                if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
+                return msg.reply("Maaf, command ini hanya bisa di gunakan oleh admin")
+  
+                  let user = msg.mentions.users.first();
+                  if(!user)
+                    return msg.reply("Silahkan metion member yang valid di Server ini");
+                  let nick = args.slice(2).join(' ');
+                  if(!nick)
+                    return msg.reply("Silahkan Masukan Nick Baru");
+                  let member = msg.mentions.members.first();
+  
+                   member.setNickname(nick);
+                   msg.channel.send(`
+Done :white_check_mark:
+> Sukses Rename **${user.tag}** Menjadi **${nick}**`)
+  
+}
 
   //music command=============
 
