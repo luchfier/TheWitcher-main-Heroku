@@ -262,7 +262,7 @@ __**Commands List**__
 > \`-resume\` - ni apa lg hadehh
 > \`-np\` - list lagu yang di mainkan
 > \`-queue/q\` - daftar antree lagu kalian 
-> \`-volume/vol\` - Set volume Range 0-100 lebih dari itu suara kek sampah
+> \`-volume/vol\` - Set volume Range 0-100
 ==============================
 > >> \`**USEFULL COMMAND**\`
 > \`-about\` - Informasi Bot
@@ -448,6 +448,23 @@ __**Commands List**__
                         .then(msg => {
                         msg.delete(3600000)
                       });
+	
+}          if(command === "pettaming") {
+                   const usefull = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/vNNTQVP.png`)
+                      msg.channel.send(usefull)
+                        .then(msg => {
+                        msg.delete(3600000)
+                      });
+	
+}          if(command === "pettaming") {
+                   const usefull = new Discord.RichEmbed()
+                     .setImage(`https://i.imgur.com/x2A9Zpi.png`)
+                      msg.channel.send(usefull)
+                        .then(msg => {
+                        msg.delete(3600000)
+                      });
+	
 }          if(command === "petfusion") {
                    const usefull = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/CEPkAXM.png`)
@@ -455,6 +472,7 @@ __**Commands List**__
                         .then(msg => {
                         msg.delete(3600000)
                       });
+	
 }          if(command === "petfusion") {
                    const usefull = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/v1IEvfc.png`)
@@ -718,7 +736,10 @@ __**Commands List**__
 
 }          if(command === "witcher!") {
                   const m = msg.reply(Witcher());
-           
+
+}	   if(command === "shuffle") {
+                  msg.reply("maaf command ini di matikan sementara");
+	
 }          if(command === "hina") {
                   const m = msg.reply(Hina());
              
@@ -946,7 +967,7 @@ Silahkan ketik 1-10.`)
 
         serverQueue.volume = args[1];
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 100);
-        return msg.channel.send(`I set the volume to: **\`${args[1]}%\`**`);
+        return msg.channel.send(`set volume ke: **\`${args[1]}%\`**`);
       
     } else if (command === "nowplaying" || command === "np") {
         if (!serverQueue) return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
