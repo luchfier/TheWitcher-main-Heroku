@@ -81,12 +81,13 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
     const serverQueue = queue.get(msg.guild.id);
     const song = {
         id: video.id,
+        a: msg.author,
         l1: moment.duration(video.duration).format('hh:mm:ss'),
         title: Util.escapeMarkdown(video.title),
         url: `https://www.youtube.com/watch?v=${video.id}`
     };
-    if (!serverQueue) {
-        const queueConstruct = {
+      if (!serverQueue) {
+          const queueConstruct = {
             textChannel: msg.channel,
             voiceChannel: voiceChannel,
             connection: null,
@@ -138,9 +139,11 @@ function play(guild, song) {
         })
         .on("error", error => console.error(error));
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 100);
+
      const lagu = new Discord.RichEmbed()
             .setColor("RANDOM")
-            .setDescription(`🎶  **|**  Start Playing <a:dance:743435170392047698> <a:apih:701397086662557717> \n**\`${song.title}\`** | \`${song.l1}\``)
+            .setDescription(`🎶  **|**  **Start Playing** <a:dance:743435170392047698> <a:apih:701397086662557717> \n**\`${song.title}\`** | \`${song.l1}\` \n__Request oleh__ ${song.a}`)
+
     serverQueue.textChannel.send(lagu);
 }
 
