@@ -290,7 +290,7 @@ __**Commands List**__
 > \`-woeguide-attack\` - menampilkan strategi attack WOE Guild
 > \`-woeguide-defense\` - menampilkan strategi defense WOE Guild
 `)
-            .setFooter("Bot from lyon to WITCHER")
+            .setFooter('Bot from lyon to WITCHER', 'https://i.imgur.com/A2vPdXq.jpg')
             .setTimestamp()
         msg.channel.send(helpembed)
                             .then(msg => {
