@@ -115,7 +115,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
         serverQueue.songs.push(song);
         console.log(serverQueue.songs);
         if (playlist) return undefined;
-      
+
         else return msg.channel.send(queue);
     }
     return undefined;
@@ -133,7 +133,7 @@ function play(guild, song) {
             else console.log(reason);
             const shiffed = serverQueue.songs.shift();
             if (serverQueue.loop === true) {
-	   	serverQueue.songs.push(shiffed); 
+	   	serverQueue.songs.push(shiffed);
 	    };
             play(guild, serverQueue.songs[0]);
         })
@@ -227,7 +227,7 @@ bot.on("error", console.error);
 bot.on('ready', () => console.log(`${bot.user.tag} has been successfully turned on!`));
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
 bot.on("reconnecting", () => console.log("I am reconnecting now..."));
-bot.on("message", async msg => { 
+bot.on("message", async msg => {
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(PREFIX)) return undefined;
 
@@ -246,16 +246,16 @@ bot.on("message", async msg => {
             .setDescription(`
 __**Commands List**__
 > >> \`**ADMIN Command**\`
-> \`-kick ["@user"]\` - kick member dari server 
-> \`-ban ["@user"]\` - ban member dari server 
+> \`-kick ["@user"]\` - kick member dari server
+> \`-ban ["@user"]\` - ban member dari server
 > \`-clear\` - membersihkan pesan dari channel tertentu
 > \`-Reboot!\` - Restart Bot
 > \`-role\` - memberikan role core
 > \`-Rename/nick\` - Ganti Nick Server Member
 ==============================
 > >> \`**Music Commad**\`
-> \`-play/P\` - command play music ketik -p "judul lagu" 
-> \`-play [title/url]\` - play tapi sebih spesifik seperti playlist youtube 
+> \`-play/P\` - command play music ketik -p "judul lagu"
+> \`-play [title/url]\` - play tapi sebih spesifik seperti playlist youtube
 > \`-skip/S\` - skip 1 lagu dari daftar queue
 > \`-stop/leave/kill/disconect\` - stop semua lagu, bot off
 > \`-search/sc\` - Cari lagu manual
@@ -264,7 +264,7 @@ __**Commands List**__
 > \`-pause\` - U know lah
 > \`-resume\` - ni apa lg hadehh
 > \`-np\` - list lagu yang di mainkan
-> \`-queue/q\` - daftar antree lagu kalian 
+> \`-queue/q\` - daftar antree lagu kalian
 > \`-volume/vol\` - Set volume Range 0-100
 ==============================
 > >> \`**USEFULL COMMAND**\`
@@ -274,7 +274,7 @@ __**Commands List**__
 > \`-User ["@user"]\` - Menampilkan Info User
 > \`-hi\` - random message buat zombloo
 > \`-hina\` - random message buat yg suka di maki - maki (tiati Baper)
-> \`-ping\`  - info latency 
+> \`-ping\`  - info latency
 > \`-witcher!\` - RANDOM MESSAGE YEL YEL KALIAN!!
 > \`-Roll/rng\` - Nomor acak
 ==============================
@@ -326,7 +326,7 @@ __**Commands List**__
                         .then(msg => {
                         msg.delete(3600000)
                       });
-  
+
 }            if (command === 'user') {
                       let user = msg.mentions.users.first() || msg.author;
                       const member = msg.mentions.members.first() || msg.member;
@@ -341,12 +341,12 @@ __**Commands List**__
                       .addField(":star: Join Discord:", user.createdAt.toLocaleDateString(), false)
                       .addField(":star: Join Server:", member.joinedAt.toLocaleDateString(), false)
                       .addField(":lock: Roles", member.roles.map(r => `${r}`).join(' | '), false);
-                      
+
                       msg.channel.send(embed)
                           .then(msg => {
                         msg.delete(3600000)
                       });
-  
+
 }            if (command === 'avatar') {
                       let user = msg.mentions.users.first() || msg.author;
                       const embed = new Discord.RichEmbed()
@@ -359,29 +359,29 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(3600000)
                       });
-                      
+
 }          if(command === "saverefine") {
                       const usefull = new Discord.RichEmbed()
                       .setTitle('~~Tutorial orang lemah~~ / Biaya Save Refine')
                       .setDescription(`
-> **+4 → +5** 
-> 5x <:ori:718366299654455297> atau <:elu:718366299901919233> | 1 item yg sama | 100.000 <:zen:718366299750662194> 
-> 
-> **+5 → +6** 
+> **+4 → +5**
+> 5x <:ori:718366299654455297> atau <:elu:718366299901919233> | 1 item yg sama | 100.000 <:zen:718366299750662194>
+>
+> **+5 → +6**
 > 10x <:ori:718366299654455297> atau <:elu:718366299901919233> | 2 item yg sama | 220.000 <:zen:718366299750662194>
-> 
+>
 > **+6 → +7:**
 > 15x <:ori:718366299654455297> atau <:elu:718366299901919233> | 3 item yg sama | 470.000 <:zen:718366299750662194>
-> 
-> **+7 → +8** 
+>
+> **+7 → +8**
 > 25x <:ori:718366299654455297> atau <:elu:718366299901919233> | 4 item yg sama | 910.000 <:zen:718366299750662194>
-> 
-> **+8 → +9** 
+>
+> **+8 → +9**
 > 50x <:ori:718366299654455297> atau <:elu:718366299901919233> | 6 item yg sama | 1.650.000 <:zen:718366299750662194>
-> 
-> **+9 → +10** 
+>
+> **+9 → +10**
 > 85x <:ori:718366299654455297> atau <:elu:718366299901919233> | 10 item yg sama | 2.740.000 <:zen:718366299750662194>
-> 
+>
 > __**Total**__
 > +4 → +10:
 > 190x <:ori:718366299654455297> or <:elu:718366299901919233> | 26 item yg sama | 6.190.000 <:zen:718366299750662194>
@@ -393,7 +393,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(3600000)
                       });
-  
+
 }          if(command === "lvpenalty") {
                    const usefull = new Discord.RichEmbed()
                       .setImage(`https://i.imgur.com/tJWTY7A.jpg`)
@@ -443,7 +443,7 @@ __**Commands List**__
                         .then(msg => {
                         msg.delete(3600000)
                       });
-  
+
 }          if(command === "pettaming") {
                    const usefull = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/F4Fnanh.png`)
@@ -451,7 +451,7 @@ __**Commands List**__
                         .then(msg => {
                         msg.delete(3600000)
                       });
-	
+
 }          if(command === "pettaming") {
                    const usefull = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/vNNTQVP.png`)
@@ -459,7 +459,7 @@ __**Commands List**__
                         .then(msg => {
                         msg.delete(3600000)
                       });
-	
+
 }          if(command === "pettaming") {
                    const usefull = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/x2A9Zpi.png`)
@@ -467,7 +467,7 @@ __**Commands List**__
                         .then(msg => {
                         msg.delete(3600000)
                       });
-	
+
 }          if(command === "petfusion") {
                    const usefull = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/CEPkAXM.png`)
@@ -475,7 +475,7 @@ __**Commands List**__
                         .then(msg => {
                         msg.delete(3600000)
                       });
-	
+
 }          if(command === "petfusion") {
                    const usefull = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/v1IEvfc.png`)
@@ -506,8 +506,8 @@ __**Commands List**__
                       msg.channel.send(usefull)
                         .then(msg => {
                         msg.delete(3600000)
-                      });  
-  
+                      });
+
 
 }          if(command === "wocguide") {
                    msg.channel.send("@everyone <a:apih:701397086662557717> Guide to War of Crystals HERE!! <a:apih:701397086662557717>");
@@ -517,7 +517,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-  
+
 }          if(command === "wocguide") {
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/QIh3ETm.jpg`)
@@ -525,7 +525,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-  
+
 }          if(command === "wocguide") {
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/EdEi0n6.jpg`)
@@ -533,7 +533,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-  
+
 }          if(command === "wocguide") {
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/0M8Ef6T.jpg`)
@@ -541,7 +541,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-  
+
 }          if(command === "wocguide") {
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/xajQPz7.jpg`)
@@ -549,7 +549,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-  
+
 }          if(command === "wocguide") {
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/yo3Az3c.jpg`)
@@ -557,7 +557,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-  
+
 }          if(command === "wocguide") {
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/bjlJYfu.jpg`)
@@ -565,7 +565,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-  
+
 }          if(command === "wocguide") {
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/lsRbEWV.jpg`)
@@ -573,7 +573,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-  
+
 }          if(command === "wocguide") {
                     const woc = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/OwZi2hd.jpg`)
@@ -581,7 +581,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-attack") {
                     msg.channel.send("@everyone <a:apih:701397086662557717> Guide to Attack on War Of Emperium HERE!! <a:apih:701397086662557717>");
                     const woe = new Discord.RichEmbed()
@@ -590,7 +590,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-attack") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/p6nQctH.jpg`)
@@ -598,7 +598,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-attack") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/OJ0iQoP.jpg`)
@@ -606,7 +606,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-attack") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/nF54CCN.jpg`)
@@ -614,7 +614,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-attack") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/4bL4Uzn.jpg`)
@@ -622,7 +622,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-attack") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/ofSqp8R.jpg`)
@@ -630,7 +630,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-attack") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/OHqirGR.jpg`)
@@ -638,7 +638,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-defense") {
                     msg.channel.send("@everyone <a:apih:701397086662557717> Guide to Defense on War Of Emperium HERE!! <a:apih:701397086662557717>");
                     const woe = new Discord.RichEmbed()
@@ -647,7 +647,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-defense") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/Kwonnji.jpg`)
@@ -655,7 +655,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-defense") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/uj7ffAR.jpg`)
@@ -663,7 +663,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-defense") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/vhoO0uG.jpg`)
@@ -671,7 +671,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-defense") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/8tWIACy.jpg`)
@@ -679,7 +679,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-defense") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/xwEkWKp.jpg`)
@@ -687,7 +687,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "woeguide-defense") {
                     const woe = new Discord.RichEmbed()
                      .setImage(`https://i.imgur.com/GHIANgv.jpg`)
@@ -695,7 +695,7 @@ __**Commands List**__
                       .then(msg => {
                         msg.delete(26400000)
                       });
-    
+
 }          if(command === "space") {
                    const m = await msg.channel.send("=======================");
 
@@ -706,7 +706,7 @@ __**Commands List**__
                   let member = msg.mentions.members.first() || msg.guild.members.get(args[0]);
                   if(!member)
                     return msg.reply("Silahkan metion member yang valid di Server ini");
-                  if(!member.kickable) 
+                  if(!member.kickable)
                     return msg.reply("Gw ga bisa kick Dia! Kasta nya beda:warning: ");
 
                   let reason = args.slice(1).join(' ');
@@ -714,8 +714,8 @@ __**Commands List**__
 
                   await member.kick(reason)
                     .catch(error => msg.reply(`Maaf ${msg.author} Gw Gabisa kick dia : ${error}`));
-                  msg.reply(`${member.user.tag} Telah di tendang oleh :fire: ${msg.author.tag} `); 
-      
+                  msg.reply(`${member.user.tag} Telah di tendang oleh :fire: ${msg.author.tag} `);
+
 }           if (command === "ban") {
                   if(!msg.member.roles.some(r=>["ADMIN"].includes(r.name)) )
                     return msg.reply("Sori  lo bukan ADMIN :poop: !");
@@ -723,7 +723,7 @@ __**Commands List**__
                   let member = msg.mentions.members.first();
                   if(!member)
                     return msg.reply("Silahkan metion member yang valid di Server ini");
-                  if(!member.bannable) 
+                  if(!member.bannable)
                     return msg.reply("Gw ga bisa kick Dia! Kasta nya beda:warning:");
 
                   let reason = args.slice(1).join(' ');
@@ -742,15 +742,15 @@ __**Commands List**__
 
 }	   if(command === "shuffle") {
                   msg.reply("maaf command ini di matikan sementara");
-	
+
 }          if(command === "hina") {
                   const m = msg.reply(Hina());
-             
+
 }          if(command === "hi") {
                   const m = msg.reply(Hi());
-    
+
 }          if(command === "roll"|| command === "rng") {
-                  
+
               let comma_index = msg.content.indexOf(',');
               let num1 = msg.content.substring((PREFIX + 'rng ').length, comma_index);
               num1 = parseInt(num1);
@@ -777,7 +777,7 @@ __**Commands List**__
               .addField('Hasil :confetti_ball:', `__\`${random}\`__`, false)
               .setFooter("The Witcher™")
               .setTimestamp();
-            
+
               msg.channel.send('Bentar Ya... <a:roll:743791502395965460>').then((msg)=> {
                     setTimeout(function(){
                       msg.edit(rich_embed);
@@ -786,44 +786,63 @@ __**Commands List**__
               .then(console.log(`Successful command reply to ${msg.content}`))
               .catch(console.error);
               return rich_embed;
-	
+
 }           if (command == 'role') {
                 if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
                 if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
                 return msg.reply("maaf, command ini hanya bisa di gunakan oleh admin,\ncukup tulis nama kamu dan nick char lalu mention/tag ADMIN untuk up role kamu \ncontoh", {files: ["https://i.imgur.com/GUUpvTB.png"]});
-                    
+
                 let role   = msg.guild.roles.find(r => r.name === "CORE");
                 let remove = msg.guild.roles.find(r => r.name === "Masyarakat");
                 let member = msg.mentions.members.first();
                 if(!member)
                     return msg.reply("Silahkan metion member yang valid di Server ini");
-                
+
 
                 member.addRole(role).catch(console.error);
                 member.removeRole(remove);
                 return msg.channel.send(`
 Done :white_check_mark:
 > Hi :wave: <@${member.user.id}> silahkan ke <#733579122739118140> untuk memilih job kamu.`);
+
+
+}          if (command == 'role-kick') {
+                if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
+                if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
+                return msg.reply("maaf, command ini hanya bisa di gunakan oleh admin,\ncukup tulis nama kamu dan nick char lalu mention/tag ADMIN untuk up role kamu \ncontoh", {files: ["https://i.imgur.com/GUUpvTB.png"]});
                     
-             
+                let role   = msg.guild.roles.find(r => r.name === "Masyarakat");
+                let remove = msg.guild.roles.find(r => r.name === "CORE");
+                let member = msg.mentions.members.first();
+                if(!member)
+                    return msg.reply("Silahkan metion member yang valid di Server ini");
+
+
+                member.addRole(role).catch(console.error);
+                member.removeRole(remove);
+                return msg.channel.send(`
+Done :white_check_mark:
+> Hi :wave: <@${member.user.id}> silahkan ke <#733579122739118140> untuk memilih job kamu.`);
+
+
 }          if(command === "clear") {
                   if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
                   if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
                   return msg.reply("Sori bro/sist lo ga punya akses :poop: !");
                   msg.channel.fetchMessages().then(messages => {
                   msg.channel.bulkDelete(messages);
-                  const messagesDeleted = messages.array().length; 
+                  const messagesDeleted = messages.array().length;
                   msg.channel.send("Telah Menghapus `" + messagesDeleted + "` Message")
                     .then(msg => {
                         msg.delete(1500)
                       });
                   })
-  
+
 }          if(command === "rename" || command === "nick") {
                 if(!msg.member.roles.some(r=>["👑 ADMIN"].includes(r.name)) )
                 if(!msg.member.roles.some(r=>["💎 Server Helper"].includes(r.name)) )
                 return msg.reply("Maaf, command ini hanya bisa di gunakan oleh admin")
-  
+
                   let user = msg.mentions.users.first();
                   if(!user)
                     return msg.reply("Silahkan metion member yang valid di Server ini");
@@ -831,12 +850,12 @@ Done :white_check_mark:
                   if(!nick)
                     return msg.reply("Silahkan Masukan Nick Baru");
                   let member = msg.mentions.members.first();
-  
+
                    member.setNickname(nick);
                    msg.channel.send(`
 Done :white_check_mark:
 > Sukses Rename **${user.tag}** Menjadi **${nick}**`)
-  
+
 }
 
   //music command=============
@@ -856,9 +875,9 @@ Done :white_check_mark:
             const videos = await playlist.getVideos();
             for (const video of Object.values(videos)) {
                 const video2 = await youtube.getVideoByID(video.id);
-                await handleVideo(video2, msg, voiceChannel, true); 
+                await handleVideo(video2, msg, voiceChannel, true);
             }
-            
+
         const song = {
                       id: video.id,
                       l1: moment.duration(video.duration).format('hh:mm:ss'),
@@ -886,7 +905,7 @@ Done :white_check_mark:
             return handleVideo(video, msg, voiceChannel);
         }
     }
-  
+
     if (command === "search" || command === "sc") {
         const voiceChannel = msg.member.voiceChannel;
         if (!voiceChannel) return msg.reply("**\`Silahkan Masuk ke Voice Channel untuk Play Music\`** :boar:");
@@ -901,8 +920,8 @@ Done :white_check_mark:
             const playlist = await youtube.getPlaylist(url);
             const videos = await playlist.getVideos();
             for (const video of Object.values(videos)) {
-                const video2 = await youtube.getVideoByID(video.id); 
-                await handleVideo(video2, msg, voiceChannel, true); 
+                const video2 = await youtube.getVideoByID(video.id);
+                await handleVideo(video2, msg, voiceChannel, true);
             }
                    const song = {
                       id: video.id,
@@ -953,7 +972,7 @@ Silahkan ketik 1-10.`)
         serverQueue.connection.dispatcher.end("SOke");
         msg.channel.send("⏭️  **|**  Skip");
         return undefined;
-      
+
     } else if (command === "stop" || command == "leave" ) {
         if (!msg.member.voiceChannel) return msg.reply("**\`Silahkan Masuk ke Voice Channel untuk Play Music\`** :boar:");
         if (!serverQueue) return msg.channel.send("Tidak ada yang bisa di **\`stop\`**");
@@ -961,7 +980,7 @@ Silahkan ketik 1-10.`)
         serverQueue.connection.dispatcher.end("Oke");
         msg.channel.send("⏹️  **|**  Bye");
         return undefined;
-      
+
     } else if (command === "volume" || command === "vol") {
         if (!msg.member.voiceChannel) return msg.reply("**\`Silahkan Masuk ke Voice Channel untuk Play Music\`** :boar:");
         if (!serverQueue) return msg.channel.send("Silahkan Mainkan lagu Untuk Mengunakan Command ini");
@@ -971,15 +990,15 @@ Silahkan ketik 1-10.`)
         serverQueue.volume = args[1];
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 100);
         return msg.channel.send(`set volume ke: **\`${args[1]}%\`**`);
-      
+
     } else if (command === "nowplaying" || command === "np") {
         if (!serverQueue) return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
           const np = new Discord.RichEmbed()
                       .setColor("RANDOM")
                       .setDescription(`**Live NOW!! <a:apih:701397086662557717> : \`${serverQueue.songs[0].title}\` | \`${serverQueue.songs[0].l1}\`**
-                  `)      
+                  `)
         return msg.channel.send(np);
-      
+
     } else if (command === "queue" || command === "q") {
         if (!serverQueue) return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
         let index = 0;
@@ -988,9 +1007,9 @@ Silahkan ketik 1-10.`)
             .setDescription(`__**Daftar Antri**__
 ${serverQueue.songs.map(song => `**\`${++index}\`  |** ${song.title} **|** ${song.l1}`).join("\n")}
 **Live NOW!! <a:apih:701397086662557717> : \`${serverQueue.songs[0].title}\` | \`${serverQueue.songs[0].l1}\`**
-        `)      
+        `)
         return msg.channel.send(antri);
-      
+
     } else if (command === "pause") {
         if (serverQueue && serverQueue.playing) {
             serverQueue.playing = false;
@@ -998,7 +1017,7 @@ ${serverQueue.songs.map(song => `**\`${++index}\`  |** ${song.title} **|** ${son
             return msg.channel.send("⏸  **|**  Berhenti sekejap");
         }
         return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
-      
+
     } else if (command === "resume") {
         if (serverQueue && !serverQueue.playing) {
             serverQueue.playing = true;
@@ -1006,15 +1025,15 @@ ${serverQueue.songs.map(song => `**\`${++index}\`  |** ${song.title} **|** ${son
             return msg.channel.send("▶  **|**  Gass kak!!");
         }
         return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
-      
+
     } else if (command === "loop" || command == "repeat") {
     	if (serverQueue) {
             serverQueue.loop = !serverQueue.loop;
             return msg.channel.send(`:repeat: **|** repeat ${serverQueue.loop === true ? "on" : "off"}!`);
 	};
 	return msg.channel.send("Tidak ada lagu :stuck_out_tongue:");
-    }  
-  
+    }
+
     return undefined;
 });
 
